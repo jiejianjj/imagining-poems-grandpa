@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://use.typekit.net/tdl1uex.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://unpkg.com/rita"></script>
+    <title>Imagining Poems by Grandpa</title>
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <script>
+      (function(d) {
+        var config = {
+            kitId: "eto6hco",
+            scriptTimeout: 3000,
+            async: true
+          },
+          h = d.documentElement,
+          t = setTimeout(function() {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function() {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
+    <style>
+      body {
+        background-color: OldLace;
+        margin: 1em;
+        font-family: brioso-pro-display, serif;
+        font-size: 36pt;
+        font-weight: 700;
+        font-style: italic;
+      }
+      div {
+        margin: 10px;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+      }
+      section {
+        flex: 1 1 500px;
+        margin: 0px 10px 50px 10px;
+      }
+      .english {
+      }
+
+      .chinese {
+        font-family: fzfangsong-gb18030, serif;
+
+        font-weight: 700;
+        font-style: italic;
+        line-height: 150%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <section>
+        <div id="englishpoems" class="english"></div>
+        <div
+          onclick="generate()"
+          style="font-size: 30pt; cursor: pointer; display: inline-block; color: FireBrick"
+        >
+          new poem
+        </div>
+      </section>
+      <section>
+        <div id="chinesepoems" class="chinese"></div>
+        <div
+          onclick="remove(); genchinese()"
+          style="font-family: fzfangsong-gb18030,serif;
+
+        font-weight: 700;
+        font-style: italic; font-size: 30pt; color: FireBrick; cursor: pointer; display: inline-block;"
+        >
+          新诗
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
