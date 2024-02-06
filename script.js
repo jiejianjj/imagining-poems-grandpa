@@ -30,7 +30,7 @@ let punctuations = ["，", "，", "，", "。", "。", "！", "？"];
 let markov;
 var chinesepoems = document.getElementById("chinesepoems");
 
-fetch("./englishtext.txt")
+fetch("englishtext.txt")
   .then(response => {
     return response.text();
   })
